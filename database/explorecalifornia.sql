@@ -17,68 +17,68 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `explorecalifornia`
+-- Database: 'explorecalifornia'
 --
-USE `explorecalifornia`;
+USE 'explorecalifornia';
 
 --
 -- Drop tables if they already exist
 --
-DROP TABLE IF EXISTS `admin`;
-DROP TABLE IF EXISTS `explorers`;
-DROP TABLE IF EXISTS `packages`;
-DROP TABLE IF EXISTS `tours`;
-DROP TABLE IF EXISTS `states`;
+DROP TABLE IF EXISTS 'admin';
+DROP TABLE IF EXISTS 'explorers';
+DROP TABLE IF EXISTS 'packages';
+DROP TABLE IF EXISTS 'tours';
+DROP TABLE IF EXISTS 'states';
 
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table 'admin'
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
-  `adminId` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`adminId`)
+CREATE TABLE IF NOT EXISTS 'admin' (
+  'adminId' int(11) NOT NULL AUTO_INCREMENT,
+  'userName' varchar(50) NOT NULL,
+  'password' varchar(50) NOT NULL,
+  PRIMARY KEY ('adminId')
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table 'admin'
 --
 
-INSERT INTO `admin` (`adminId`, `userName`, `password`) VALUES
+INSERT INTO 'admin' ('adminId', 'userName', 'password') VALUES
 (1, 'explorerone', 'password');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `explorers`
+-- Table structure for table 'explorers'
 --
 
-CREATE TABLE IF NOT EXISTS `explorers` (
-  `explorerId` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `dob` date DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `city` varchar(50) NOT NULL,
-  `state` varchar(2) DEFAULT NULL,
-  `zipcode` varchar(10) DEFAULT NULL,
-  `userName` varchar(15) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  `tours` varchar(29) NOT NULL,
-  `bio` varchar(4096) DEFAULT NULL,
-  PRIMARY KEY (`explorerId`)
+CREATE TABLE IF NOT EXISTS explorers (
+  explorerId int(11) NOT NULL AUTO_INCREMENT,
+  firstName varchar(50) NOT NULL,
+  lastName varchar(50) NOT NULL,
+  dob date DEFAULT NULL,
+  email varchar(100) NOT NULL,
+  address varchar(100) DEFAULT NULL,
+  city varchar(50) NOT NULL,
+  state varchar(2) DEFAULT NULL,
+  zipcode varchar(10) DEFAULT NULL,
+  userName varchar(15) NOT NULL,
+  password varchar(10) NOT NULL,
+  tours varchar(29) NOT NULL,
+  bio varchar(4096) DEFAULT NULL,
+  PRIMARY KEY (explorerId)
 ) ENGINE=Innodb  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `explorers`
+-- Dumping data for table 'explorers'
 --
 
-INSERT INTO `explorers` (`explorerId`, `firstName`, `lastName`, `dob`, `email`, `address`, `city`, `state`, `zipcode`, `userName`, `password`, `tours`, `bio`) VALUES
+INSERT INTO explorers (explorerId, firstName, lastName, dob, email, address, city, state, zipcode, userName, password, tours, bio) VALUES
 (1, 'Jackie', 'Smith', '1985-07-10', 'jackiesmith@somewhere.com', '123 Main St.', 'Somewhere', 'CA', '90123', 'jackies', 'password', '1,3,5', 'I''ve lived in CA for over 20 years!'),
 (2, 'David', 'Jones', '1965-11-28', 'davidjones@somewhere.com', '456 Jones Ave.', 'Smallville', 'CA', '90456', 'davidj', 'password', '3,5,8', 'I love riding bicycles!'),
 (3, 'Jenny', 'Flores', '1950-02-03', 'jennyf@somewhere.com', '987 Topeka Ave.', 'Bigtown', 'CA', '90543', 'jennyf', 'password', '2,3,4,', 'I''m heading to the beach!');
@@ -86,22 +86,22 @@ INSERT INTO `explorers` (`explorerId`, `firstName`, `lastName`, `dob`, `email`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `packages`
+-- Table structure for table 'packages'
 --
 
-CREATE TABLE IF NOT EXISTS `packages` (
-  `packageId` int(11) NOT NULL AUTO_INCREMENT,
-  `packageTitle` varchar(50) NOT NULL,
-  `packageDescription` varchar(4096) NOT NULL,
-  `packageGraphic` varchar(20) NOT NULL,
-  PRIMARY KEY (`packageId`)
+CREATE TABLE IF NOT EXISTS packages (
+  packageId int(11) NOT NULL AUTO_INCREMENT,
+  packageTitle varchar(50) NOT NULL,
+  packageDescription varchar(4096) NOT NULL,
+  packageGraphic varchar(20) NOT NULL,
+  PRIMARY KEY (packageId)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data for table `packages`
+-- Dumping data for table 'packages'
 --
 
-INSERT INTO `packages` (`packageId`, `packageTitle`, `packageDescription`, `packageGraphic`) VALUES
+INSERT INTO packages (packageId, packageTitle, packageDescription, packageGraphic) VALUES
 (1, 'Backpack Cal', 'Explore California our favorite way...by foot! Get outdoors and into the millions of acres of forests, desert, and spectacular scenery that California is famous for. We have a wide range of backpacking tour options, from single day-trips to week long guided excursions. Find a comfortable pair of shoes and come hiking with us! ', 'back_bug.gif'),
 (2, 'California Calm', 'Looking for a little relaxation? California Calm is our hand-picked collection of incredible California Spas and therapy retreats. Enjoy unbelievable massage treatments, beauty regimens, and active getaways. We''ve combed the entire state to find the finest spa experiences available...imagine that, we''ve even made choosing a spa retreat relaxing! ', 'calm_desc_bug.gif'),
 (3, 'California Hotsprings', 'Let''s be honest, you have no idea what a hot spring is...do you? Well, we do, and we can''t wait for you to experience the relaxing warmth of "nature''s hot-tubs!" We offer packages that range from all-inclusive hot spring resorts to camping opportunities next to some of the country''s last remaining primitive springs.', 'springs_desc_bug.gif'),
@@ -115,20 +115,20 @@ INSERT INTO `packages` (`packageId`, `packageTitle`, `packageDescription`, `pack
 -- --------------------------------------------------------
 
 --
--- Table structure for table `states`
+-- Table structure for table 'states'
 --
 
-CREATE TABLE IF NOT EXISTS `states` (
-  `stateId` varchar(2) NOT NULL,
-  `stateName` varchar(20) NOT NULL,
-  PRIMARY KEY (`stateId`)
+CREATE TABLE IF NOT EXISTS states (
+  stateId varchar(2) NOT NULL,
+  stateName varchar(20) NOT NULL,
+  PRIMARY KEY (stateId)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `states`
+-- Dumping data for table 'states'
 --
 
-INSERT INTO `states` (`stateId`, `stateName`) VALUES
+INSERT INTO states (stateId, stateName) VALUES
 ('AK', 'Alaska'),
 ('AL', 'Alabama'),
 ('AR', 'Arkansas'),
@@ -183,29 +183,29 @@ INSERT INTO `states` (`stateId`, `stateName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tours`
+-- Table structure for table 'tours'
 --
 
-CREATE TABLE IF NOT EXISTS `tours` (
-  `tourId` int(11) NOT NULL AUTO_INCREMENT,
-  `packageId` int(11) NOT NULL,
-  `tourName` varchar(50) NOT NULL,
-  `blurb` varchar(1024) NOT NULL,
-  `description` varchar(4096) NOT NULL,
-  `price` double NOT NULL,
-  `difficulty` varchar(10) NOT NULL,
-  `graphic` varchar(20) NOT NULL,
-  `length` int(11) NOT NULL,
-  `region` varchar(50) NOT NULL,
-  `keywords` varchar(200) NOT NULL,
-  PRIMARY KEY (`tourId`),
-  KEY `packageId` (`packageId`)
+CREATE TABLE IF NOT EXISTS tours (
+  tourId int(11) NOT NULL AUTO_INCREMENT,
+  packageId int(11) NOT NULL,
+  tourName varchar(50) NOT NULL,
+  blurb varchar(1024) NOT NULL,
+  description varchar(4096) NOT NULL,
+  price double NOT NULL,
+  difficulty varchar(10) NOT NULL,
+  graphic varchar(20) NOT NULL,
+  length int(11) NOT NULL,
+  region varchar(50) NOT NULL,
+  keywords varchar(200) NOT NULL,
+  PRIMARY KEY (tourId),
+  KEY packageId (packageId)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
--- Dumping data for table `tours`
+-- Dumping data for table 'tours'
 --
-INSERT INTO `tours` (`tourId`, `packageId`, `tourName`, `blurb`, `description`, `price`, `difficulty`, `graphic`, `length`, `region`, `keywords`) VALUES
+INSERT INTO tours (tourId, packageId, tourName, blurb, description, price, difficulty, graphic, length, region, keywords) VALUES
 (1, 1, 'Big Sur Retreat', 'Big Sur is big country. The Big Sur Retreat takes you to the most majestic part of the Pacific Coast and show you the secret trails.', '"The region know as Big Sur is like Yosemite''s younger cousin, with all the redwood scaling, rock climbing and, best of all, hiking that the larger park has to offer. Robison Jeffers once said, ""Big Sur is the greatest meeting of land and sea in the world,"" but the highlights are only accessible on foot. Our 3-day tour allows you to choose from multiple hikes led by experienced guides during the day, while comfortably situated in the evenings at the historic Big Sur River Inn. Take a tranquil walk to the coastal waterfall at Julia Pfeiffer Burns State Par or hike to the Married Redwoods. If you''re prepared for a more strenuous climb, try Ollason''s Peak in Toro Park. An optional 4th day includes admission to the Henry Miller Library and the Point Reyes Lighthouse."', 750, 'Medium', 'map_bigsur.gif', 3, 'Central Coast', 'Hiking, National Parks, Big Sur'),
 (2, 1, 'In the Steps of John Muir', 'Follow in the steps on John Muir, famous naturalist and founder of the Sierra Club, and walk the same trails he helped blaze in and around Yosemite National Park.', '"John Muir famously walked from San Francisco to Yosemite, an astounding 300 miles, and this tour is designed to trace his steps-- at least part of the way. This tour is not for the faint of heart though. This is a true backpacker''s adventure, 37 miles in 3 days. Along the way, you''ll bear witness to the classic monuments of Yosemite, such as Vernal Falls, Nevada Falls, Half Dome, Cathedral Peak, Tuolumne Meadows and Mt. Lyell. At Nevada Falls, the trail becomes narrow and from then on, you''ll be privy to a ""secret"" Yosemite, including a rarely seen face of Half Dome. John Muir Trail tickets are required- and hard to come by- but Explore California has you covered. We''ll also provide a checklist so that you come prepared with the right equipment and a seasoned guide for your tour."', 600, 'Difficult', 'map_yosemite.gif', 3, 'Northern California', 'Hiking, National Parks, Yosemite, John Muir, Camping'),
 (3, 1, 'The Death Valley Survivor''s Trek', 'Hot stuff? Need more of a challenge? Take this tour to the hottest place in North America: Death Valley.', '"This 2 day, 1 night tour takes you deep into the heart of Death Valley National Park. Due to extreme temperatures (120 degrees and higher) in the summer months, this tour is only offered November through April.  This overnighter is no picnic though. Our guide will lead you on a 12 mile, off-trail hike down Death Valley Wash and into the backcountry for an overnight, hard terrain camping. Luckily, 12 miles takes you out of range of almost any city lights, something that draws thousands of star gazers to Death Valley ever year. If you can survive the 12 miles back, take advantage of the location to stop in at Scotty''s Castle, a genuine castle built by the eccentric and wealthy Walter Scott for his wife. This tour will make you truly appreciate modern luxuries."', 250, 'Difficult', 'map_valley.gif', 2, 'Inland Empire', 'Hiking, Desert, Camping, Mojave, Death Valley'),
