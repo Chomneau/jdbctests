@@ -26,6 +26,10 @@ public class Main {
 		} catch (SQLException e) {
 			System.err.println(e);
 		} finally {
+			if (rs != null)
+				rs.close();
+			if (stmnt != null)
+				stmnt.close();
 			if (conn != null)
 				conn.close();
 		}
